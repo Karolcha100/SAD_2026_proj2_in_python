@@ -54,7 +54,6 @@ def cross_validate_ridge(
         X_val_s = scaler.transform(X_val)
 
         for a_idx, alpha in enumerate(alphas):
-            print(f"\t[ALPHA]: {a_idx}")
             model = Ridge(alpha=alpha)
             model.fit(X_tr_s, y_tr)
             preds = model.predict(X_val_s)
